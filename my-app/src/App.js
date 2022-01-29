@@ -1,47 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
-import Avatar from './components/avatar';
-import { Clock, ClockES7 } from './components/clock';
-import { useReducer } from 'react';
-import { Formulario, EssayForm } from './components/formularios';
-// import Button from 'react-bootstrap/Button';
-// import Row from 'react-bootstrap/Row';
-// import Col from 'react-bootstrap/Col';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-
-function Welcome(props) {
-  return (
-    <h1>Hello, {props.name}</h1>
-  )
-}
-
-const data = { name: "some name", avatarUrl: "someurl" }
+import { StrictMode } from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Index from './pages/Index';
+import { ClockPage } from './pages/ClockPage';
+import Layout from './components/layout';
 
 function App() {
   return (
     <div>
-      <Welcome name="Matias" />
-      <Avatar user={data} />
-
-      <Formulario></Formulario>
-      <EssayForm></EssayForm>
-      {/* <Clock></Clock> */}
-      <ClockES7></ClockES7>
-      {/* <Row className="mx-0">
-        <Button as={Col} variant="primary">Button #1</Button>
-        <Button as={Col} variant="secondary" className="mx-2">Button #2</Button>
-        <Button as={Col} variant="success">Button #3</Button>
-      </Row> */}
+      <StrictMode>
+        <BrowserRouter>
+          <Layout>
+            <Routes>
+              <Route exact path="/" element={<Index></Index>} />
+              <Route exact path="/clock" element={<ClockPage></ClockPage>} />
+            </Routes>
+          </Layout>
+        </BrowserRouter>
+      </StrictMode>
     </div>
-
   );
 }
 export default App;
-
-
-
-
-
 
 // function App() {
 //   return (

@@ -55,7 +55,7 @@ export class ClockES7 extends React.Component {
         console.log(this)
         this.timer = setInterval(() => {
             this.setState({
-                hour: new Date().toLocaleTimeString()
+                hour: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
             })
         }, 1000)
     }
