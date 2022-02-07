@@ -1,22 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
+// import './css/index.css'
 import { StrictMode } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Layout from './components/layout';
+import Welcome from './pages/Welcome';
 import Index from './pages/Index';
 import { ClockPage } from './pages/ClockPage';
-import Layout from './components/layout';
 
 function App() {
   return (
     <div>
       <StrictMode>
         <BrowserRouter>
-          <Layout>
-            <Routes>
-              <Route exact path="/" element={<Index></Index>} />
-              <Route exact path="/clock" element={<ClockPage></ClockPage>} />
-            </Routes>
-          </Layout>
+          {/* <Layout> */}
+          <Routes>
+            <Route exact path="/" element={<Welcome />} />
+            <Route exact path="/index" element={<Index />} />
+            <Route exact path="/clock" element={<ClockPage />} />
+          </Routes>
+          {/* </Layout> */}
         </BrowserRouter>
       </StrictMode>
     </div>

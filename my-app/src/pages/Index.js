@@ -3,11 +3,7 @@ import { Formulario, EssayForm } from '../components/formularios';
 import { Avatar, Welcome } from '../components/avatar'
 import { Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import { Container } from 'react-bootstrap'
-import Aside from '../components/sideBar'
+
 const data = { name: "Esta es avatar", avatarUrl: "https://www.digitalludhiana.com/img/services/icons/digital-marketing.png" }
 
 export default class Index extends Component {

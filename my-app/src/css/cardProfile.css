@@ -1,0 +1,56 @@
+.text-main {
+    position: absolute;
+    top: 50px;
+    left: 500px;
+}
+
+.pentagon {
+    clip-path: polygon(50% 0, 100% 45%, 80% 100%, 20% 100%, 0 45%);
+    background-size: cover;
+    margin: 10px auto;
+    height: 300px;
+    width: 300px;
+}
+
+.layoutProfile {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 69px 1fr 80px;
+    min-height: 100vh;
+    gap: 0px;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+
+}
+
+.header {
+    grid-column: 1 / 5;
+    grid-row: 1;
+
+}
+
+.img-left {
+    grid-column: 2 / 3;
+    grid-row: 2;
+}
+
+.img-right {
+
+    grid-column: 4 / 5;
+    grid-row: 2;
+}
+
+
+img {
+    width: 400px;
+    transition: all 2s ease-in-out;
+    display: block;
+}
+
+img:hover {
+    transform: scale(1.5);
+    cursor: pointer;
+    color: #fff;
+    opacity: 0;
+}

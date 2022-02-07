@@ -88,3 +88,5 @@ export class EssayForm extends React.Component {
     );
   }
 }
+// linea original:
+// "start": "react-scripts start",

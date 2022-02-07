@@ -31,32 +31,32 @@ import {
 } from 'react-pro-sidebar';
 import { FaTachometerAlt, FaGem, FaList, FaGithub, FaRegLaughWink, FaHeart } from 'react-icons/fa';
 import sidebarBg from '../images/bg2.jpg';
-import '../css/sidebars.css';
+// import '../css/sidebars.css';
 
 export const Aside = ({ image, collapsed, rtl, toggled, handleToggleSidebar }) => {
     return (
-        <ProSidebar image={sidebarBg}>
+        <ProSidebar image={sidebarBg} >
             <SidebarHeader>
                 <div style={{
-                    padding: '24px', textTransform: 'uppercase', fontWeight: 'bold', fontSize: 14, letterSpacing: '0px',
+                    padding: '24px', textTransform: 'uppercase', fontWeight: 'bold', fontSize: 14, letterSpacing: '1px',
                     overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
                 }}>
-                    SideBar
+                    Soy Marrano
                 </div>
             </SidebarHeader>
 
-            <SidebarContent>
+            <SidebarContent >
                 <Menu iconShape="circle">
-                    <MenuItem icon={<FaTachometerAlt />} suffix={<span className="badge red"></span>}></MenuItem>
-                    <MenuItem icon={<FaGem />}></MenuItem>
+                    <MenuItem icon={<FaTachometerAlt />} suffix={<span className="badge red">Entre</span>}></MenuItem>
+                    <MenuItem icon={<FaGem />}>Othe fuck</MenuItem>
                 </Menu>
                 <Menu iconShape="circle">
-                    <SubMenu suffix={<span className="badge yellow">3</span>} icon={<FaRegLaughWink />}>
+                    <SubMenu suffix={<span className="badge yellow">Profile</span>} icon={<FaRegLaughWink />}>
                         <MenuItem>1</MenuItem>
                         <MenuItem>2</MenuItem>
                         <MenuItem>3</MenuItem>
                     </SubMenu>
-                    <SubMenu prefix={<span className="badge gray">3</span>} icon={<FaHeart />}>
+                    <SubMenu prefix={<span className="badge red">Languages</span>} icon={<FaHeart />}>
                         <MenuItem>1</MenuItem>
                         <MenuItem>2</MenuItem>
                         <MenuItem>3</MenuItem>
@@ -97,11 +97,15 @@ export const Aside = ({ image, collapsed, rtl, toggled, handleToggleSidebar }) =
 
 
 export class AsideII extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {}
+    }
     render() {
         return (
             <div className="flex-shrink-0 p-3 bg-white" style={{ height: '100%' }}>
                 <a href="/" className="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
-                    <span className="fs-5 fw-semibold">Collapsible</span>
+                    <span className="fs-5 fw-semibold">{this.props.title}</span>
                 </a>
                 <ul className="list-unstyled ps-0">
                     <li className="mb-1">
@@ -162,3 +166,5 @@ export class AsideII extends React.Component {
     }
 
 }
+
+AsideII.defaultProps = { title: "Hola" }

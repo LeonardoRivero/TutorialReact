@@ -45,14 +45,14 @@ export default class Request {
     async put(url, data) {
         this.options.method = "PUT";
         this.options.body = data;
-        let response = await fetch(url, this.options)
-        this.handleResponse(response)
+        let response = await this.handleResponse(url)
+        return response
 
     }
     async delete(url) {
         this.options.method = "DELETE";
-        let response = await fetch(url, this.options)
-        this.handleResponse(response)
+        let response = await this.handleResponse(url)
+        return response
 
     }
     async handleResponse(url) {
